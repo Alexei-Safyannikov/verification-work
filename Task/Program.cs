@@ -1,4 +1,7 @@
-﻿string[] ArrayString(int size)
+﻿Console.Write("Задайте размер массива: ");
+int size = Convert.ToInt32(Console.ReadLine());
+
+string[] ArrayString(int size)
 {
     string[] array = new string[size];
     for (int i = 0; i < array.Length; i++)
@@ -26,20 +29,19 @@ string[] NewArrayString(string[] array)
         if (array[i].Length <= 3) count++;
     }
     string[] newArray = new string[count];
-    int k = 0;
+    int j = 0;
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i].Length <= 3)
         {
-            newArray[k] = array[i];
-            k++;
+            newArray[j] = array[i];
+            j++;
         }
     }
     return newArray;
 }
-Console.Write("Задайте размер массива: ");
-int size = Convert.ToInt32(Console.ReadLine());
-if (size <= 0) Console.WriteLine("Ошибка");
+
+if (size <= 0) Console.WriteLine("Ошибка ввода данных");
 else
 {
     string[] array = ArrayString(size);
